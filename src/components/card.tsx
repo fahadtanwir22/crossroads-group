@@ -1,19 +1,23 @@
 import React from 'react'
 
-const card = () => {
+const card = ({commit}: any) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
-    <img className="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains" />
+    <img className="w-full" src="https://avatars.githubusercontent.com/u/85127839?v=4" alt="Sunset in the mountains" />
     <div className="px-6 py-4">
-      <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+      <div className="font-bold text-xl mb-2 ">{commit.name}</div>
       <p className="text-gray-700 text-base">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+        email: {commit.email}
+      </p>
+      <p className="text-gray-700 text-base">
+        Message: {commit.message}
+      </p>
+      <p className="text-gray-700 text-base">
+        Date: {commit.date}
       </p>
     </div>
     <div className="px-6 pt-4 pb-2">
-      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2" style={{cursor: 'pointer'}}><a target="_blank" href={commit.html_url}>View Changed Files</a></span>
     </div>
   </div>
   )
